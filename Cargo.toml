@@ -2,11 +2,8 @@
 authors = ["Jonathan Brouwer"]
 name = "increment"
 version = "0.1.0"
+description = "Incrementor functionality"
 edition = "2018"
-
-[package.metadata.maturin.scripts]
-#Incrementer = "increment:Incrementer"
-incrementer_one = "increment:incrementer_one"
 
 [dependencies]
 pyo3 = { version = "0.9.0-alpha.1", features = ["extension-module"] }
