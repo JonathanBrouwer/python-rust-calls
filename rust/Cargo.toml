@@ -5,7 +5,6 @@ version = "0.1.0"
 edition = "2018"
 
 [dependencies]
-rayon = "1.0.2"
 pyo3 = { features = ["extension-module"] }
 
 [lib]

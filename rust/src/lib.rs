@@ -3,11 +3,9 @@
 
 use pyo3::prelude::*;
 use pyo3::wrap_pyfunction;
-use rayon::prelude::*;
 use std::fs;
 use std::path::PathBuf;
 
-/// Represents a file that can be searched
 #[pyclass(module = "increment")]
 struct Incrementer {
     by: usize
@@ -25,7 +23,6 @@ impl Incrementer {
     }
 }
 
-/// Count the occurences of needle in line, case insensitive
 #[pyfunction]
 fn incrementer_one(inp: usize) -> usize {
     inp + 1
