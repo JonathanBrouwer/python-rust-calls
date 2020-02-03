@@ -1,12 +1,12 @@
 [package]
-authors = ["Messense Lv <messense@icloud.com>"]
-name = "word-count"
+authors = ["Jonathan Brouwer"]
+name = "increment"
 version = "0.1.0"
 edition = "2018"
 
 [dependencies]
-pyo3 = { features = ["extension-module"] }
+pyo3 = { version = "0.9.0-alpha.1", features = ["extension-module"] }
 
 [lib]
-name = "word_count"
+name = "increment"
 crate-type = ["cdylib"]
