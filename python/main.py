@@ -1,4 +1,3 @@
-from word_count import WordCounter
+from increment import Incrementer
 
-print(WordCounter("text.txt").search("word"))
-print(WordCounter("text.txt").search_sequential("word"))
+print(Incrementer(5).increment_by(3))
