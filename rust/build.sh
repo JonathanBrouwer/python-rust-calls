@@ -1,3 +1,3 @@
 source venv/bin/activate
-cd rust
+cd rust || exit
 maturin develop
