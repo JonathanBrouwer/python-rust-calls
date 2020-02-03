@@ -1,2 +1,2 @@
-source venv/bin/activate || exit
-maturin develop
+maturin develop || exit
+python3 python/check.py || exit
