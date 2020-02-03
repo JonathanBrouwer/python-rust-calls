@@ -1,9 +1,4 @@
-from cffi import FFI
-ffi = FFI()
-ffi.cdef("""
-    int inc(int);
-""")
+from word_count import WordCounter
 
-C = ffi.dlopen("../rust/target/debug/libdyn.so")
-
-print(C.inc(5))
+print(WordCounter("text.txt").search("word"))
+print(WordCounter("text.txt").search_sequential("word"))

@@ -1,13 +1,13 @@
 [package]
-name = "python_rust_calls"
+authors = ["Messense Lv <messense@icloud.com>"]
+name = "word-count"
 version = "0.1.0"
-authors = ["JonathanBrouwer <j.t.brouwer@student.tudelft.nl>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+rayon = "1.0.2"
+pyo3 = { features = ["extension-module"] }
 
 [lib]
-name = "dyn"
-crate-type = ["dylib"]
-
-[dependencies]
+name = "word_count"
+crate-type = ["cdylib"]
