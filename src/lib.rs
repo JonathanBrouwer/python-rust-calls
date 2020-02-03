@@ -1,13 +1,20 @@
 use pyo3::prelude::*;
+use pyo3::wrap_pyfunction;
 
 #[pyclass]
-struct DummyClass {}
+struct Incrementer {
+    by: usize
+}
 
 #[pymethods]
-impl DummyClass {
-    #[staticmethod]
-    fn get_42() -> PyResult<usize> {
-        Ok(42)
+impl Incrementer {
+    #[new]
+    fn new(by: usize) -> Self {
+        Incrementer { by }
+    }
+
+    fn increment_by(&self, inp: usize) -> PyResult<usize> {
+        Ok(inp + self.by)
     }
 }
 
@@ -17,8 +24,9 @@ fn incrementer_one(inp: usize) -> usize {
 }
 
 #[pymodule]
-fn increment(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<DummyClass>()?;
+fn increment(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(incrementer_one))?;
+    m.add_class::<Incrementer>()?;
 
     Ok(())
 }
