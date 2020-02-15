@@ -1,8 +1,12 @@
+extern crate nalgebra as na;
+extern crate alga;
+
 pub use incrementers::{
     Incrementer
 };
 
 pub mod incrementers;
+pub mod ahrs;
 
 use pyo3::prelude::*;
 use pyo3::wrap_pyfunction;
