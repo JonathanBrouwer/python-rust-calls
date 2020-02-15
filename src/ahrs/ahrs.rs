@@ -1,3 +1,6 @@
+extern crate nalgebra as na;
+extern crate alga;
+
 use na::{Vector3, Quaternion};
 use alga::general::RealField;
 
