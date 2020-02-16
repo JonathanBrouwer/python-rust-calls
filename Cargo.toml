@@ -1,19 +1,19 @@
 [package]
 authors = ["Jonathan Brouwer"]
-name = "increment"
+name = "lobster_rust"
 version = "0.1.0"
-description = "Incrementor functionality"
+description = "Lobster rust code"
 edition = "2018"
 
 [dependencies]
-pyo3 = { version = "0.9.0-alpha.1" }
+pyo3 = "0.9.0-alpha.1"
 nalgebra = "0.19.0"
 alga = "0.9.2"
 approx = "0.3.2"
 rand = "0.7.3"
 
 [lib]
-name = "increment"
+name = "lobster_rust"
 crate-type = ["rlib", "cdylib"]
 
 [features]

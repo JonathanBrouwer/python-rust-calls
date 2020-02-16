@@ -1,5 +1,5 @@
-from increment import incrementer_one, Incrementer
+from lobster_rust import increment
 
-assert incrementer_one(3) == 4
-assert Incrementer(5).apply(3) == 8
+assert increment.increment_one(3) == 4
+assert increment.Incrementer(5).apply(3) == 8
 print("SUCCESS")

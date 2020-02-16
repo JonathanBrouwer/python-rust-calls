@@ -19,13 +19,13 @@ impl Incrementer {
 }
 
 #[pyfunction]
-fn incrementer_one(inp: usize) -> usize {
+fn increment_one(inp: usize) -> usize {
     inp + 1
 }
 
 #[pymodule]
-fn increment(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
-    m.add_wrapped(wrap_pyfunction!(incrementer_one))?;
+pub fn increment(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(increment_one))?;
     m.add_class::<Incrementer>()?;
 
     Ok(())
@@ -33,11 +33,11 @@ fn increment(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
 
 #[cfg(test)]
 mod tests {
-    use crate::increment::incrementers::{incrementer_one, Incrementer};
+    use crate::increment::increment::{increment_one, Incrementer};
 
     #[test]
     fn test_increment_one() {
-        assert_eq!(4, incrementer_one(3));
+        assert_eq!(4, increment_one(3));
     }
 
     #[test]

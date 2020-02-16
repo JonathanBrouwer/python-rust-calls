@@ -46,9 +46,9 @@ impl<N: RealField> Madgwick<N> {
     /// # Example
     ///
     /// ```
-    /// extern crate increment;
+    /// extern crate lobster_rust;
     ///
-    /// use increment::ahrs::madgwick_filter::Madgwick;
+    /// use lobster_rust::ahrs::madgwick_filter::Madgwick;
     ///
     /// fn main() {
     ///     let ahrs = Madgwick::new(0.002390625f64, 0.1);
@@ -76,7 +76,7 @@ impl<N: RealField> Madgwick<N> {
     /// extern crate nalgebra as na;
     ///
     /// use na::Quaternion;
-    /// use increment::ahrs::madgwick_filter::Madgwick;
+    /// use lobster_rust::ahrs::madgwick_filter::Madgwick;
     ///
     /// fn main() {
     ///     let ahrs = Madgwick::new_with_quat(
@@ -134,7 +134,7 @@ impl<N: RealField> Ahrs<N> for Madgwick<N> {
         gyroscope: &Vector3<N>,
         accelerometer: &Vector3<N>,
         magnetometer: &Vector3<N>,
-    ) -> Result<&Quaternion<N>, &str> {
+    ) -> Result<&Quaternion<N>, &'static str> {
         let q = self.quat;
 
         let zero: N = na::zero();
@@ -195,7 +195,7 @@ impl<N: RealField> Ahrs<N> for Madgwick<N> {
         &mut self,
         gyroscope: &Vector3<N>,
         accelerometer: &Vector3<N>,
-    ) -> Result<&Quaternion<N>, &str> {
+    ) -> Result<&Quaternion<N>, &'static str> {
         let q = self.quat;
 
         let zero: N = na::zero();

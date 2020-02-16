@@ -1,10 +1,7 @@
 extern crate nalgebra as na;
 
-#[macro_use]
-extern crate approx;
-
-use increment::ahrs::ahrs::Ahrs;
-use increment::ahrs::madgwick_filter::Madgwick;
+use lobster_rust::ahrs::ahrs::Ahrs;
+use lobster_rust::ahrs::madgwick_filter::Madgwick;
 use na::{Vector3, Quaternion};
 use std::f64;
 
