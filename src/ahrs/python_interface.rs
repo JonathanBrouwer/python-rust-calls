@@ -65,21 +65,6 @@ impl MadgwickP {
     }
 }
 
-impl Default for MadgwickP {
-    /// Creates a new `Madgwick` instance with default filter parameters:
-    ///
-    /// ```rust,ignore
-    /// Madgwick {
-    ///     sample_period: 1.0f64/256.0,
-    ///     beta: 0.1f64,
-    ///     quat: Quaternion { w: 1.0f64, i: 0.0, j: 0.0, k: 0.0 }
-    /// }
-    /// ```
-    fn default() -> MadgwickP {
-        MadgwickP{ mw: Madgwick::<f64>::default() }
-    }
-}
-
 #[pymethods]
 impl MadgwickP {
     fn update(
